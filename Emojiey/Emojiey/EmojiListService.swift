@@ -8,10 +8,10 @@
 import Foundation
 
 class EmojiListService {
-    var EmojiList: EmojiList?
+    var emojiList: EmojiList?
     
     init() {
-        EmojiList = getEmojiListFromJSON()
+        emojiList = getEmojiListFromJSON()
     }
     
     func getEmojiListFromJSON() -> EmojiList? {
@@ -25,8 +25,7 @@ class EmojiListService {
             return nil
         }
         
-        let decoder = JSONDecoder()
-        let decoded = try? decoder.decode(EmojiList, from: data)
+        let decoded = try? JSONDecoder().decode(EmojiList.self, from: data)
         
         return decoded
     }

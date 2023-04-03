@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Emoji: Hashable {
-     var emoji: String
-     var description: String
-     var category: String
-     var aliases: [String]
-     var tags: [String]
-     var unicode_version: Double
-     var ios_version: Double
+struct Emoji: Hashable, Codable {
+     let emoji: String
+     let description: String
+     let category: String
+     let aliases: [String]
+     let tags: [String]
+     let unicode_version: Double
+     let ios_version: Double
 }
