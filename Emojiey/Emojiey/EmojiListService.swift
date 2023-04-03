@@ -25,8 +25,14 @@ class EmojiListService {
             return nil
         }
         
+//        checking the data works
+        let str = String(decoding: data, as: UTF8.self)
+        print(str + "It worked!")
+
         let decoded = try? JSONDecoder().decode(EmojiList.self, from: data)
+        print("the function ran")
         
         return decoded
+        // ContentView prints emojis.emojiList.count
     }
 }

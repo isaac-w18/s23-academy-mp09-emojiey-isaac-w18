@@ -11,7 +11,7 @@ import SwiftUI
 struct EmojieyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(emojis: EmojiListService().getEmojiListFromJSON() ?? EmojiList(emojiList: []))
+            ContentView()
         }
     }
 }

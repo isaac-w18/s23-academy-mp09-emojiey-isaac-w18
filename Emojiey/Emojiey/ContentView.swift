@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis: EmojiList
+    let emojis = EmojiListService().getEmojiListFromJSON() ?? EmojiList(emojiList: [])
+    
     
     let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
+        GridItem(.adaptive(minimum: 80))
+//        GridItem(.flexible()),
+//        GridItem(.flexible())
     ]
     
     var body: some View {
-        
+        let blah = print("\(emojis.emojiList.count)")
         
         // make a list of Emojis and disply using lazyVGrid
         ScrollView {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(emojis.emojiList, id: \.self) { item in
-                    Text(item.emoji)
+//                    Text(item.emoji)
+                    Text("HI")
                 }
             }
             .padding(.horizontal)
@@ -32,8 +35,15 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(emojis: EmojiListService().getEmojiListFromJSON() ?? EmojiList(emojiList: []))
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(
+////            emojis: EmojiListService().getEmojiListFromJSON() ?? EmojiList(emojiList: [Emoji(emoji: "😀", description: "grinning face", category: "Smileys & Emotion", aliases: [
+////            "grinning"
+////          ], tags: [
+////            "smile"
+////          , "happy"
+////          ], unicode_version: 6.1, ios_version: 6.0)])
+//        )
+//    }
+//}
