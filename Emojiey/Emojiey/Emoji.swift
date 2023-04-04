@@ -5,16 +5,16 @@
 //  Created by Isaac Frank on 3/29/23.
 //
 
-//import Foundation
-//
+import Foundation
+
 //struct Emoji: Hashable, Codable {
-//     let emoji: String
-//     let description: String
-//     let category: String
-//     let aliases: [String]
-//     let tags: [String]
-//     let unicode_version: Double
-//     let ios_version: Double
+//     let emoji: String?
+//     let description: String?
+//     let category: String?
+//     let aliases: [String]?
+//     let tags: [String]?
+//     let unicode_version: String?
+//     let ios_version: String?
 //}
 
 
@@ -27,13 +27,12 @@
 
 import Foundation
 
-// MARK: - WelcomeElement
 struct Emoji: Codable, Hashable {
-    let emoji, description: String
-    let category: Category
-    let aliases, tags: [String]
-    let unicodeVersion: UnicodeVersion
-    let iosVersion: String
+    let emoji, description: String?
+    let category: Category?
+    let aliases, tags: [String]?
+    let unicodeVersion: UnicodeVersion?
+    let iosVersion: String?
     let skinTones: Bool?
 
     enum CodingKeys: String, CodingKey {
@@ -78,4 +77,4 @@ enum UnicodeVersion: String, Codable {
     case the90 = "9.0"
 }
 
-typealias Welcome = [Emoji]
+//typealias Welcome = [Emoji]

@@ -26,12 +26,15 @@ class EmojiListService {
         }
         
 //        checking the data works
-        let str = String(decoding: data, as: UTF8.self)
-        print(str + "It worked!")
-
-        let decoded = try? JSONDecoder().decode(EmojiList.self, from: data)
-        print("the function ran")
+//        let str = String(decoding: data, as: UTF8.self)
+//        print(str + "It worked!")
         
+        guard let decoded = try? JSONDecoder().decode(EmojiList.self, from: data) else {
+            print("Decoding error")
+            return nil
+        }
+        
+        print("Made it!")
         return decoded
         // ContentView prints emojis.emojiList.count
     }

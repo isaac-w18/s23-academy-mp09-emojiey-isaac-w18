@@ -18,7 +18,8 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        let blah = print("\(emojis.emojiList.count)")
+        // to see if emojis has loaded
+        let testPrint = print("\(emojis.emojiList.count)")
         
         // make a list of Emojis and disply using lazyVGrid
         ScrollView {
