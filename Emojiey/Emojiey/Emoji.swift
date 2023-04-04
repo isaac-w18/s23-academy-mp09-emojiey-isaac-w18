@@ -28,11 +28,11 @@ import Foundation
 import Foundation
 
 struct Emoji: Codable, Hashable {
-    let emoji, description: String?
-    let category: Category?
-    let aliases, tags: [String]?
-    let unicodeVersion: UnicodeVersion?
-    let iosVersion: String?
+    let emoji, description: String
+    let category: Category
+    let aliases, tags: [String]
+    let unicodeVersion: UnicodeVersion
+    let iosVersion: String
     let skinTones: Bool?
 
     enum CodingKeys: String, CodingKey {

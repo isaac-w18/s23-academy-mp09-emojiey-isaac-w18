@@ -8,13 +8,13 @@
 import Foundation
 
 class EmojiListService {
-    var emojiList: EmojiList?
+    var emojiList: [Emoji]?
     
     init() {
         emojiList = getEmojiListFromJSON()
     }
     
-    func getEmojiListFromJSON() -> EmojiList? {
+    func getEmojiListFromJSON() -> [Emoji]? {
         guard let url = Bundle.main.url(forResource: "emoji", withExtension: ".json") else {
             print("Bad url")
             return nil
@@ -29,7 +29,7 @@ class EmojiListService {
 //        let str = String(decoding: data, as: UTF8.self)
 //        print(str + "It worked!")
         
-        guard let decoded = try? JSONDecoder().decode(EmojiList.self, from: data) else {
+        guard let decoded = try? JSONDecoder().decode([Emoji].self, from: data) else {
             print("Decoding error")
             return nil
         }
