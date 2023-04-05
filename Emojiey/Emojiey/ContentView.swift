@@ -28,13 +28,17 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(searchedEmojis, id: \.self) { item in
-                        Text(item.emoji)
-                            .font(.title)
+                        NavigationLink {
+                            EmojiDetailView(emoji: item)
+                        } label: {
+                            Text(item.emoji)
+                                .font(.title)
+                        }
                     }
                 }
                 .padding(.horizontal)
             }
-            .frame(maxHeight: 300)
+            .frame(maxHeight: .infinity)
             .navigationTitle("Emojiey")
         }
         .searchable(text: $searchText)
